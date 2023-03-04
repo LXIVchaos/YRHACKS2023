@@ -12,6 +12,7 @@ public class MainWindow extends JFrame implements ActionListener {
                 MainApp.generalGoalWindow.setVisible(true);
         }
     }
+
     
     public MainWindow(String name) {
         //setting up the window
@@ -22,25 +23,21 @@ public class MainWindow extends JFrame implements ActionListener {
         add(panel);
 
         //menu items
+        String[] menuItems = {"Goals", "User Statistics", "Constraints"};
+        String[][] subItems = {{"General", "Target Weight"}, {"Weight", "Experience", "Activity Level"}, {"Equipment", "Schedule"}};
         JMenuBar mainMenuBar = new JMenuBar();
-
-        JMenu option1 = new JMenu("Goals");
-        option1.setFont(MainApp.menuFont);
-        
-        JMenuItem generalGoals = new JMenuItem("General");
-        generalGoals.setFont(MainApp.menuFont);
-        generalGoals.addActionListener(this);
-        option1.add(generalGoals);
-
-        JMenu option2 = new JMenu("User Statistics");
-        option2.setFont(MainApp.menuFont);
-
-        JMenu option3 = new JMenu("Progress");
-        option3.setFont(MainApp.menuFont);
-        
-        mainMenuBar.add(option1);
-        mainMenuBar.add(option2);
-        mainMenuBar.add(option3);
+        for (int i = 0; i < menuItems.length; i++) {
+            JMenu item = new JMenu(menuItems[i]);
+            item.setFont(MainApp.menuFont);
+            
+            for (String j: subItems[i]) {
+                JMenuItem x = new JMenuItem(j);
+                x.setFont(MainApp.menuFont);
+                x.addActionListener(this);
+                item.add(x);
+            }
+            mainMenuBar.add(item);
+        }
         setJMenuBar(mainMenuBar);
 
         pack();
