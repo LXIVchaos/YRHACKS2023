@@ -20,6 +20,12 @@ public class MainWindow extends JFrame implements ActionListener {
             case "Experience":
                 MainApp.experienceWindow.setVisible(true);
                 break;
+            case "Equipment":
+                MainApp.equipmentWindow.setVisible(true);
+                break;
+            case "Schedule":
+                MainApp.scheduleWindow.setVisible(true);
+                break;
         }
     }
 

@@ -11,6 +11,8 @@ public class MainApp
     public static TargetWeight targetWeightWindow;
     public static CurrentWeight currentWeightWindow;
     public static Experience experienceWindow;
+    public static Equipment equipmentWindow;
+    public static Schedule scheduleWindow;
     
     public static Font menuFont = new Font("Segoe UI", Font.PLAIN, 12);
     public static Font titleFont = new Font("Segoe UI", Font.BOLD, 20);
@@ -23,6 +25,8 @@ public class MainApp
         targetWeightWindow = new TargetWeight("Target Weight");
         currentWeightWindow = new CurrentWeight("Current Weight");
         experienceWindow = new Experience("Experience");
+        equipmentWindow = new Equipment("Equipment");
+        scheduleWindow = new Schedule("Schedule");
         mainWindow.setVisible(true);
     }
 }
