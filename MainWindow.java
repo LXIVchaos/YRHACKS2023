@@ -17,6 +17,9 @@ public class MainWindow extends JFrame implements ActionListener {
             case "Weight":
                 MainApp.currentWeightWindow.setVisible(true);
                 break;
+            case "Experience":
+                MainApp.experienceWindow.setVisible(true);
+                break;
         }
     }
 
