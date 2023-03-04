@@ -84,17 +84,21 @@ public class MainWindow extends JFrame implements ActionListener, Runnable {
                     calories = 1800;
                     break;
                     case 1:
-                    calories = 1950;
+                    calories = 1900;
                     break;
                     case 2:
-                    calories = 2100;
+                    calories = 2000;
                     break;
                     case 3:
-                    calories = 2250;
+                    calories = 2100;
                     break;
+                    case 4:
+                    calories = 2200;
+                    break;
+
                 }
                 if (GlobalData.targetWeight > 0)
-                    calories *= GlobalData.currentWeight / GlobalData.targetWeight;
+                    calories *= (double)(GlobalData.targetWeight + 250) / (double)(GlobalData.currentWeight + 250);
                 calorieLabel.setText("Today's Calories: " + calories);
             } catch (Exception e) {
 
