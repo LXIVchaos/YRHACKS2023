@@ -26,6 +26,9 @@ public class MainWindow extends JFrame implements ActionListener {
             case "Schedule":
                 MainApp.scheduleWindow.setVisible(true);
                 break;
+            case "Activity Level":
+                MainApp.activityWindow.setVisible(true);
+                break;
         }
     }
 

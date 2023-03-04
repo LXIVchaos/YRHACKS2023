@@ -1,7 +1,5 @@
 import java.awt.*;
 import javax.swing.*;
-import java.io.*;
-import java.util.Scanner;
 
 public class MainApp
 {
@@ -13,6 +11,7 @@ public class MainApp
     public static Experience experienceWindow;
     public static Equipment equipmentWindow;
     public static Schedule scheduleWindow;
+    public static Activity activityWindow;
     
     public static Font menuFont = new Font("Segoe UI", Font.PLAIN, 12);
     public static Font titleFont = new Font("Segoe UI", Font.BOLD, 20);
@@ -27,6 +26,7 @@ public class MainApp
         experienceWindow = new Experience("Experience");
         equipmentWindow = new Equipment("Equipment");
         scheduleWindow = new Schedule("Schedule");
+        activityWindow = new Activity("Activity Level");
         mainWindow.setVisible(true);
     }
 }
