@@ -8,8 +8,8 @@ public class MainWindow extends JFrame implements ActionListener {
 
         //making certain windows visible based on user input
         switch (action) {
-            case "Goals":
-                MainApp.goalWindow.setVisible(true);
+            case "General":
+                MainApp.generalGoalWindow.setVisible(true);
         }
     }
     
@@ -24,18 +24,23 @@ public class MainWindow extends JFrame implements ActionListener {
         //menu items
         JMenuBar mainMenuBar = new JMenuBar();
 
-        JMenuItem option1 = new JMenuItem("Goals");
+        JMenu option1 = new JMenu("Goals");
         option1.setFont(MainApp.menuFont);
-        option1.addActionListener(this);
-        option1.setMaximumSize(new Dimension(50, 10000));
+        
+        JMenuItem generalGoals = new JMenuItem("General");
+        generalGoals.setFont(MainApp.menuFont);
+        generalGoals.addActionListener(this);
+        option1.add(generalGoals);
 
-        JMenuItem option2 = new JMenuItem("User Statistics");
+        JMenu option2 = new JMenu("User Statistics");
         option2.setFont(MainApp.menuFont);
-        option2.addActionListener(this);
-        option2.setMaximumSize(new Dimension(200, 10000));
+
+        JMenu option3 = new JMenu("Progress");
+        option3.setFont(MainApp.menuFont);
         
         mainMenuBar.add(option1);
         mainMenuBar.add(option2);
+        mainMenuBar.add(option3);
         setJMenuBar(mainMenuBar);
 
         pack();
