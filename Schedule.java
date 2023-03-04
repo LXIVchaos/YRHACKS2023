@@ -1,7 +1,5 @@
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.text.JTextComponent;
-
 import java.awt.event.*;
 
 public class Schedule extends JFrame implements ActionListener {
