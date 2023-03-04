@@ -8,6 +8,7 @@ public class GlobalData {
     public static int experience;
     public static int activity;
     public static boolean[] generalGoals = new boolean[3];
+    public static boolean[] experienceLevel = new boolean[4];
     public static boolean[] equipment = new boolean[5];
     public static boolean[] workoutDays = new boolean[7];
 
