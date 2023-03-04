@@ -8,7 +8,7 @@ public class GlobalData {
     public static int experience;
     public static int activity;
     public static boolean[] generalGoals = new boolean[3];
-    public static boolean[] equipment = new boolean[4];
+    public static boolean[] equipment = new boolean[5];
     public static boolean[] workoutDays = new boolean[7];
 
 
@@ -26,7 +26,7 @@ public class GlobalData {
                 generalGoals[i] = s.nextInt() == 1;
             }
 
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 5; i++) {
                 equipment[i] = s.nextInt() == 1;
             }
 
