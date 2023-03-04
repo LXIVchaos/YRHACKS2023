@@ -2,7 +2,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class MainWindow extends JFrame implements ActionListener {
+public class MainWindow extends JFrame implements ActionListener, Runnable {
+    public static JLabel calorieLabel;
     public void actionPerformed(ActionEvent e) {
         String action = e.getActionCommand();
 
@@ -39,6 +40,7 @@ public class MainWindow extends JFrame implements ActionListener {
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(640, 360));
         panel.setBackground(new Color(64, 64, 64));
+        panel.setLayout(null);
         add(panel);
 
         //menu items
@@ -59,6 +61,44 @@ public class MainWindow extends JFrame implements ActionListener {
         }
         setJMenuBar(mainMenuBar);
 
+        calorieLabel = new JLabel("Today's Calories: ");
+        calorieLabel.setForeground(new Color(255, 255, 255));
+        calorieLabel.setFont(MainApp.titleFont);
+        calorieLabel.setLocation(10, 0);
+        calorieLabel.setSize(300, 40);
+        panel.add(calorieLabel);
+
         pack();
+
+        Thread thread = new Thread(this);
+        thread.start();
+    }
+
+    public void run() {
+        while (true) {
+            try {
+                Thread.sleep(10);
+                int calories = 0;
+                switch (GlobalData.activity) {
+                    case 0:
+                    calories = 1800;
+                    break;
+                    case 1:
+                    calories = 1950;
+                    break;
+                    case 2:
+                    calories = 2100;
+                    break;
+                    case 3:
+                    calories = 2250;
+                    break;
+                }
+                if (GlobalData.targetWeight > 0)
+                    calories *= GlobalData.currentWeight / GlobalData.targetWeight;
+                calorieLabel.setText("Today's Calories: " + calories);
+            } catch (Exception e) {
+
+            }
+        }
     }
 }
