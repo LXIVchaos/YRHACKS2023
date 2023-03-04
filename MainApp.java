@@ -8,6 +8,9 @@ public class MainApp
     //global trakcer for windows
     public static MainWindow mainWindow;
     public static GeneralGoals generalGoalWindow;
+    public static TargetWeight targetWeightWindow;
+    public static CurrentWeight currentWeightWindow;
+    
     public static Font menuFont = new Font("Segoe UI", Font.PLAIN, 12);
     public static Font titleFont = new Font("Segoe UI", Font.BOLD, 20);
 
@@ -16,6 +19,8 @@ public class MainApp
         GlobalData.readUserData();
         mainWindow = new MainWindow("SimpliFit");
         generalGoalWindow = new GeneralGoals("General Goals");
+        targetWeightWindow = new TargetWeight("Target Weight");
+        currentWeightWindow = new CurrentWeight("Current Weight");
         mainWindow.setVisible(true);
     }
 }

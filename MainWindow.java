@@ -10,6 +10,13 @@ public class MainWindow extends JFrame implements ActionListener {
         switch (action) {
             case "General":
                 MainApp.generalGoalWindow.setVisible(true);
+                break;
+            case "Target Weight":
+                MainApp.targetWeightWindow.setVisible(true);
+                break;
+            case "Weight":
+                MainApp.currentWeightWindow.setVisible(true);
+                break;
         }
     }
 

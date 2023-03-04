@@ -2,22 +2,23 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class TargetWeight extends JFrame implements ActionListener {
+public class CurrentWeight extends JFrame implements ActionListener {
     public static JTextField field;
-    public TargetWeight(String s) {
-        super(s);
+
+    public CurrentWeight(String name) {
+        super(name);
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.setPreferredSize(new Dimension(300, 80));
         panel.setBackground(new Color(230, 230, 230));
         add(panel);
 
-        JLabel titleText = new JLabel("Choose target weight (lbs)");
+        JLabel titleText = new JLabel("Choose current weight (lbs)");
         titleText.setSize(200, 25);
         titleText.setLocation(10, 10);
         titleText.setFont(MainApp.menuFont);
 
-        field = new JTextField(Integer.toString(GlobalData.targetWeight));
+        field = new JTextField(Integer.toString(GlobalData.currentWeight));
         field.setSize(125, 25);
         field.setLocation(160, 10);
         field.setFont(MainApp.menuFont);
@@ -34,11 +35,12 @@ public class TargetWeight extends JFrame implements ActionListener {
 
         pack();
     }
+
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Apply":
                 try {
-                    GlobalData.targetWeight = Integer.parseInt(field.getText());
+                    GlobalData.currentWeight = Integer.parseInt(field.getText());
                     GlobalData.writeUserData();
                 } catch (Exception x) {
                     JOptionPane.showMessageDialog(this, "Ensure that you have inputed an integer!");
@@ -46,5 +48,4 @@ public class TargetWeight extends JFrame implements ActionListener {
             break;
         }        
     }
-    
 }
